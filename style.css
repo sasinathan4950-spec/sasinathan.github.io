@@ -70,3 +70,151 @@ body {
 .nav-links a:hover {
     color: var(--primary);
 }
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 8% 80px;
+    gap: 60px;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    min-height: 45px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    background: var(--primary);
+    color: #000;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.35);
+    transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 80px 0 40px;
+    color: var(--primary);
+}
+
+/* ===========================
+   RESPONSIVE HERO
+=========================== */
+
+@media (max-width: 992px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 140px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        margin: 0 auto 35px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+}
