@@ -1,237 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sasinathan R | Embedded Software Engineer</title>
+    <title>Sasinathan R | Embedded Software Engineer</title>
 
-<style>
+    <meta name="description"
+        content="Professional portfolio of Sasinathan R - Embedded Software Engineer specializing in Embedded C, ARM Cortex-M, STM32, AVR, Firmware Development, Device Drivers and RTOS.">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <meta name="keywords"
+        content="Embedded Engineer, Embedded C, Firmware Engineer, STM32, ARM, AVR, Portfolio">
 
-body{
-    font-family:Segoe UI,Arial,sans-serif;
-    background:#0d1117;
-    color:#e6edf3;
-}
+    <meta name="author" content="Sasinathan R">
 
-/* Header */
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-header{
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(135deg,#0d47a1,#00acc1);
-}
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-header h1{
-    font-size:3rem;
-}
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-header p{
-    font-size:1.2rem;
-    margin-top:15px;
-}
-
-/* Sections */
-
-section{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-.card{
-    background:#161b22;
-    border-radius:15px;
-    padding:25px;
-    margin-bottom:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4);
-}
-
-h2{
-    color:#4fc3f7;
-    margin-bottom:15px;
-}
-
-/* Skills */
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.skill{
-    background:#238636;
-    padding:10px 15px;
-    border-radius:25px;
-}
-
-/* Projects */
-
-.project{
-    background:#21262d;
-    padding:15px;
-    margin-top:15px;
-    border-radius:10px;
-}
-
-.project h3{
-    color:#58a6ff;
-}
-
-/* Button */
-
-.btn{
-    display:inline-block;
-    background:#238636;
-    color:white;
-    text-decoration:none;
-    padding:12px 20px;
-    margin-top:10px;
-    border-radius:8px;
-}
-
-.btn:hover{
-    background:#2ea043;
-}
-
-/* Footer */
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#161b22;
-    margin-top:40px;
-}
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<!-- ================= NAVBAR ================= -->
 
-<h1>Sasinathan Rangasamy</h1>
+<nav class="navbar">
+
+    <div class="logo">
+        Sasinathan R
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Hi, I'm
+            <span>Sasinathan R</span>
+        </h1>
+
+        <h2 id="typing"></h2>
+
+        <p>
+
+            Passionate Embedded Software Engineer focused on
+            Embedded C, Firmware Development, ARM Cortex-M,
+            STM32, AVR, Device Drivers and Low-Level Programming.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
+
+            <a href="assets/resume.pdf"
+                class="btn btn-outline"
+                download>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="assets/profile.jpg"
+            alt="Profile">
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <div class="about-container">
+
+        <p>
+
+            I am an aspiring Embedded Software Engineer with a
+            strong passion for firmware development, embedded C,
+            microcontrollers and low-level programming.
+
+            My focus is writing efficient, reliable and optimized
+            code for resource-constrained embedded systems.
+
+            I enjoy learning computer architecture,
+            communication protocols and real-time systems.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+
+        Skills
+
+    </h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">Embedded C</div>
+        <div class="skill-card">C Programming</div>
+        <div class="skill-card">Pointers</div>
+        <div class="skill-card">Bit Manipulation</div>
+        <div class="skill-card">STM32</div>
+        <div class="skill-card">ARM Cortex-M</div>
+        <div class="skill-card">AVR</div>
+        <div class="skill-card">UART</div>
+        <div class="skill-card">SPI</div>
+        <div class="skill-card">I²C</div>
+        <div class="skill-card">GPIO</div>
+        <div class="skill-card">Timers</div>
+        <div class="skill-card">Interrupts</div>
+        <div class="skill-card">ADC</div>
+        <div class="skill-card">PWM</div>
+        <div class="skill-card">Git</div>
+        <div class="skill-card">GitHub</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">
+
+Projects
+
+</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<h3>Temperature Based Fan Controller</h3>
 
 <p>
-Aspiring Embedded Software Engineer
-</p>
 
-<p>
-Embedded C | Pointers | Bit Manipulation | Microcontrollers
-</p>
+Automatic fan speed control using temperature sensor.
 
-</header>
-
-<section>
-
-<div class="card">
-
-<h2>About Me</h2>
-
-<p>
-I am an aspiring Embedded Software Engineer passionate about
-Embedded C programming, firmware development, microcontrollers,
-bit manipulation and low-level hardware programming.
-
-Currently building hands-on projects and strengthening my
-understanding of embedded systems.
 </p>
 
 </div>
 
-<div class="card">
+<div class="project-card">
 
-<h2>Skills</h2>
+<h3>UART Driver</h3>
 
-<div class="skills">
-
-<span class="skill">C Programming</span>
-<span class="skill">Embedded C</span>
-<span class="skill">Pointers</span>
-<span class="skill">Bit Manipulation</span>
-<span class="skill">Structures</span>
-<span class="skill">UART</span>
-<span class="skill">SPI</span>
-<span class="skill">I2C</span>
-<span class="skill">Git</span>
-<span class="skill">GitHub</span>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Projects</h2>
-
-<div class="project">
-<h3>Fan Speed Controller</h3>
 <p>
-Temperature-based fan control system using Embedded C.
+
+Interrupt driven UART driver in Embedded C.
+
 </p>
+
 </div>
 
-<div class="project">
-<h3>Bit Manipulation Examples</h3>
+<div class="project-card">
+
+<h3>SPI Driver</h3>
+
 <p>
-Set, Clear, Toggle and Check Bit operations.
+
+Full duplex SPI communication.
+
 </p>
+
 </div>
 
-<div class="project">
-<h3>Pointer Practice Programs</h3>
-<p>
-Basic pointers, pointer arithmetic and function pointers.
-</p>
-</div>
+<div class="project-card">
 
-<div class="project">
 <h3>GPIO Register Programming</h3>
-<p>
-Register-level programming using bit masking techniques.
-</p>
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>GitHub</h2>
 
 <p>
-<a class="btn"
-href="https://github.com/sasinathan4950-spec"
-target="_blank">
-Visit My GitHub
-</a>
+
+Register-level peripheral programming.
+
 </p>
 
 </div>
 
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>Email : yourmail@gmail.com</
 </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2 class="section-title">
+
+Education
+
+</h2>
+
+<div class="education-card">
+
+<h3>Bachelor of Engineering</h3>
+
+<p>
+
+(Electronics / Related Field)
+
+</p>
+
+<p>
+
+Expected Graduation: XXXX
+
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+
+Contact
+
+</h2>
+
+<p>Email: your-email@example.com</p>
+
+<p>GitHub: github.com/sasinathan4950-spec</p>
+
+<p>LinkedIn: Add your LinkedIn URL</p>
 
 </section>
 
 <footer>
 
 <p>
-© 2026 Sasinathan R | Embedded Software Engineer
+
+© 2026 Sasinathan R
+
 </p>
 
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
