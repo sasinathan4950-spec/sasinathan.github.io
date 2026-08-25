@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "STM32 Developer",
             "ARM Cortex-M Enthusiast"
         ],
-        typeSpeed: 60,
+        typeSpeed: 70,
         backSpeed: 40,
-        backDelay: 1500,
         loop: true
     });
 
@@ -28,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             topBtn.style.display = "none";
         }
+
     });
 
     topBtn.addEventListener("click", () => {
@@ -39,18 +39,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    window.addEventListener("scroll", () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < 
+});
