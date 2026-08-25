@@ -2,100 +2,136 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sasinathan R | Embedded Software Engineer</title>
 
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Embedded Software Engineer specializing in Embedded C, STM32, ARM Cortex-M, Device Drivers and Firmware Development">
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <div class="grid-bg"></div>
+    <!-- Navigation -->
 
     <nav class="navbar">
 
         <div class="logo">
-            EMBEDDED.SYSTEM
+            Embedded.System
         </div>
 
-        <ul>
-            <li><a href="#about">li>
-            <li><a href="#skills">SKi>
-            <li><a href="#projects">></li>
-            <li><a href="#contact">CONTACT</a    </ul>
+        <ul class="nav-links">
+
+            <li><a href="#/a></li>
+
+            <li><aboutAbout</a></li>
+
+            <li><a href="#skills">Skills</a></li    <li><a href="#protocols">Protocols</a         <li><projectsProjects</a></li>
+
+            <li><contactContact</a></li>
+
+        </ul>
 
     </nav>
 
-    <section class="hero">
+    <!-- Hero -->
 
-        <div class="hero-left">
+    <section id="home" class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
 
             <div class="status-box">
-                SYSTEM STATUS : ONLINE
+                ● SYSTEM STATUS : ONLINE
             </div>
 
             <h1>
-                SASINATHAN R
+                Sasinathan R
             </h1>
 
             <h2 id="typing"></h2>
 
             <p>
+
                 Embedded Software Engineer focused on
-                Firmware Development, Embedded C,
-                STM32, ARM Cortex-M and Device Drivers.
+                STM32, ARM Cortex-M, Embedded C,
+                Device Drivers, Firmware Development,
+                Communication Protocols and RTOS.
+
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
-                #projects
+                <a hrefts
                     View Projects
                 </a>
 
-                assets/resume.pdf
-                    Resume
+                <a href="assets/resume.pdf"
+                    class="btn btn-outline"
+                    download>
+
+                    Download Resume
+
                 </a>
 
-            </div>
+           ets/stm32-board-hero.png"
+                alt="STM32 Board">
 
         </div>
 
-        <div class="hero-right">
+   id="about">
 
-            <div class="dashboard-card">
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-                <h3>Development Status</h3>
+        <div class="about-container">
 
-                <div class="skill-meter">
-                    <span>Embedded C</span>
-                    <div class="bar"><div style="width:95%"></div></div>
-                </div>
+            <div class="about-image">
 
-                <div class="skill-meter">
-                    <span>STM32</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
+                assets/profile.png
 
-                <div class="skill-meter">
-                    <span>UART / SPI / I2C</span>
-                    <div class="bar"><div style="width:92%"></div></div>
-                </div>
+            </div>
 
-                <div class="skill-meter">
-                    <span>ARM Cortex-M</span>
-                    <div class="bar"><div style="width:88%"></div></div>
-                </div>
+            <div class="about-content">
+
+                <p>
+
+                    Passionate Embedded Software Engineer
+                    dedicated to developing efficient and
+                    reliable firmware for microcontroller
+                    based systems.
+
+                </p>
+
+                <p>
+
+                    Strong interest in STM32, ARM Cortex-M,
+                    Firmware Architecture, Device Drivers,
+                    RTOS, Communication Protocols and
+                    Low-Level Programming.
+
+                </p>
 
             </div>
 
@@ -103,105 +139,306 @@
 
     </section>
 
-    <section id="about">
-
-        <h2>ABOUT</h2>
-
-        <div class="card">
-
-            <p>
-                Passionate Embedded Software Engineer interested in
-                low level programming, RTOS, communication protocols,
-                firmware architecture and microcontroller development.
-
-                Strong focus on writing efficient, optimized and reliable
-                code for resource constrained systems.
-            </p>
-
-        </div>
-
-    </section>
+    <!-- Skills Dashboard -->
 
     <section id="skills">
 
-        <h2>SKILLS</h2>
+        <h2 class="section-title">
 
-        <div class="skills">
+            Firmware Skill Dashboard
 
-            <div class="chip">Embedded C</div>
-            <div class="chip">STM32</div>
-            <div class="chip">ARM Cortex-M</div>
-            <div class="chip">UART</div>
-            <div class="chip">SPI</div>
-            <div class="chip">I2C</div>
-            <div class="chip">GPIO</div>
-            <div class="chip">PWM</div>
-            <div class="chip">ADC</div>
-            <div class="chip">Interrupts</div>
-            <div class="chip">Git</div>
-            <div class="chip">GitHub</div>
+        </h2>
+
+        <div class="dashboard">
+
+            <div class="meter">
+
+                <span>Embedded C</span>
+
+                <div class="progress">
+                    <div class="value" style="width:95%">
+                        95%
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="meter">
+
+                <span>STM32</span>
+
+                <div class="progress">
+                    <div class="value" style="width:90%">
+                        90%
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="meter">
+
+                <span>ARM Cortex-M</span>
+
+                <div class="progress">
+                    <div class="value" style="width:88%">
+                        88%
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="meter">
+
+                <span>UART / SPI / I2C</span>
+
+                <div class="progress">
+                    <div class="value" style="width:92%">
+                        92%
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="meter">
+
+                <span>Device Drivers</span>
+
+                <div class="progress">
+                    <div class="value" style="width:90%">
+                        90%
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
     </section>
+
+    <!-- Protocol Center -->
+
+    <section id="protocols">
+
+        <h2 class="section-title">
+            Protocol Center
+        </h2>
+
+        <div class="protocol-grid">
+
+            <div class="protocol-card">
+
+                <div class="led"></div>
+
+                <h3>UART</h3>
+
+                <p>115200 Baud</p>
+
+                <span>ACTIVE</span>
+
+            </div>
+
+            <div class="protocol-card">
+
+                <div class="led"></div>
+
+                <h3>SPI</h3>
+
+                <p>Full Duplex</p>
+
+                <span>ACTIVE</span>
+
+            </div>
+
+            <div class="protocol-card">
+
+                <div class="led"></div>
+
+                <h3>I²C</h3>
+
+                <p>100 KHz</p>
+
+                <span>ACTIVE</span>
+
+            </div>
+
+            <div class="protocol-card">
+
+                <div class="led"></div>
+
+                <h3>PWM</h3>
+
+                <p>Motor Control</p>
+
+                <span>ACTIVE</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
 
     <section id="projects">
 
-        <h2>PROJECTS</h2>
+        <h2 class="section-title">
+            Featured Project
+        </h2>
 
-        <div class="projects">
+        <div class="project-card">
 
-            <div class="project">
-                <h3>Temperature Based Fan Controller</h3>
-                <p>ADC and PWM based automatic fan control system.</p>
+            <div class="project-image">
+
+                assets/fan-controller-diagram.png
+
             </div>
 
-            <div class="project">
-                <h3>UART Driver</h3>
-                <p>Interrupt-driven UART driver implemented in Embedded C.</p>
-            </div>
+            <div class="project-content">
 
-            <div class="project">
-                <h3>SPI Driver</h3>
-                <p>Full duplex SPI communication driver.</p>
-            </div>
+                <h3>
+                    Temperature Based Fan Controller
+                </h3>
 
-            <div class="project">
-                <h3>GPIO Register Programming</h3>
-                <p>STM32 peripheral register level programming.</p>
+                <ul>
+
+                    <li>STM32F4 Based Solution</li>
+
+                    <li>ADC Temperature Monitoring</li>
+
+                    <li>PWM Speed Regulation</li>
+
+                    <li>Real-Time Embedded System</li>
+
+                    <li>Firmware Developed in Embedded C</li>
+
+                </ul>
+
+                <div class="project-buttons">
+
+                    #
+                        GitHub
+                    </a>
+
+                    #
+                        Case Study
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
+
+    <!-- ARM Cortex-M -->
+
+    <section id="architecture">
+
+        <h2 class="section-title">
+
+            ARM Cortex-M Architecture
+
+        </h2>
+
+        <div class="architecture-container">
+
+            assets/arm-cortex-m-chip.png
+
+            <div>
+
+                <h3>
+                    ARM Cortex-M Core
+                </h3>
+
+                <p>
+
+                    32-bit RISC architecture designed
+                    for low-power and real-time
+                    embedded applications.
+
+                </p>
+
+                <p>
+
+                    Supports interrupt handling,
+                    deterministic execution,
+                    firmware portability and
+                    efficient peripheral control.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact Terminal -->
 
     <section id="contact">
 
-        <h2>CONTACT</h2>
+        <h2 class="section-title">
 
-        <div class="card center">
+            Contact Terminal
 
-            <p>
-                Email : sasinathan4950@gmail.com
-            </p>
+        </h2>
 
-            <p>
-                GitHub :
-                <a href="https://github.com/sasinathan4950-spec"
-                    target="_blank">
-                    github.com/sasinathan4950-spec
-                </a>
-            </p>
+        <div class="terminal">
+
+            <p>$ whoami</p>
+
+            <span>Sasinathan R</span>
+
+            <p>$ role</p>
+
+            <span>Embedded Software Engineer</span>
+
+            <p>$ email</p>
+
+            <span>sasinathan4950@gmail.com</span>
+
+            <p>$ github</p>
+
+            <span>
+                github.com/sasinathan4950-spec
+            </span>
+
+            <p>$ status</p>
+
+            <span>OPEN_TO_WORK</span>
 
         </div>
 
     </section>
 
+    <!-- Footer -->
+
     <footer>
-        © 2026 Sasinathan R | Embedded Software Engineer
+
+        <p>
+            © 2026 Sasinathan R |
+            Embedded Software Engineer
+        </p>
+
     </footer>
 
+    <!-- Scroll Top -->
+
+    <button id="topBtn">
+
+        <i class="fas fa-arrow-up"></i>
+
+    </button>
+
+    <!-- Typed JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+
+    <!-- AOS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <script src="script.js"></script>
 
 </body>
