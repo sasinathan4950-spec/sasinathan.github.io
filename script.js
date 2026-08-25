@@ -1,17 +1,19 @@
-/*==================================================
-    EMBEDDED DASHBOARD PORTFOLIO
+/*=========================================================
+    Portfolio Script
     Author : Sasinathan Rangasamy
-==================================================*/
+=========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*=================================
-            LOADER
-    =================================*/
+    "use strict";
+
+    /*=====================================================
+        LOADER
+    =====================================================*/
+
+    const loader = document.getElementById("loader");
 
     window.addEventListener("load", () => {
-
-        const loader = document.getElementById("loader");
 
         if (!loader) return;
 
@@ -20,44 +22,55 @@ document.addEventListener("DOMContentLoaded", () => {
             loader.classList.add("hide");
 
             setTimeout(() => {
+
                 loader.remove();
-            }, 600);
+
+            }, 500);
 
         }, 1200);
 
     });
 
-    /*=================================
-            AOS INITIALIZATION
-    =================================*/
+    /*=====================================================
+        AOS
+    =====================================================*/
 
     if (typeof AOS !== "undefined") {
 
         AOS.init({
+
             duration: 1000,
             once: true,
             easing: "ease-in-out"
+
         });
 
     }
 
-    /*=================================
-            TYPING EFFECT
-    =================================*/
+    /*=====================================================
+        TYPED JS
+    =====================================================*/
 
     const typingElement = document.getElementById("typing");
 
-    if (typingElement) {
+    if (typingElement && typeof Typed !== "undefined") {
 
         new Typed("#typing", {
 
             strings: [
+
                 "Embedded Software Engineer",
-                "Firmware Developer",
-                "STM32 Developer",
-                "ARM Cortex-M Engineer",
+
+                "STM32 Firmware Developer",
+
+                "ARM Cortex-M Programmer",
+
                 "PIC16F877A Developer",
-                "Embedded C Programmer"
+
+                "Embedded C Programmer",
+
+                "RTOS Enthusiast"
+
             ],
 
             typeSpeed: 70,
@@ -69,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /*=================================
-            CURRENT YEAR
-    =================================*/
+    /*=====================================================
+        FOOTER YEAR
+    =====================================================*/
 
     const year = document.getElementById("year");
 
@@ -81,13 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /*=================================
-            SCROLL PROGRESS BAR
-    =================================*/
+    /*=====================================================
+        SCROLL PROGRESS BAR
+    =====================================================*/
 
     const progressBar = document.getElementById("progressBar");
 
-    window.addEventListener("scroll", () => {
+    function updateProgressBar() {
 
         if (!progressBar) return;
 
@@ -100,37 +113,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         progressBar.style.width = progress + "%";
 
-    });
+    }
 
-    /*=================================
-            BACK TO TOP BUTTON
-    =================================*/
+    window.addEventListener("scroll", updateProgressBar);
 
-    const topBtn = document.getElementById("topBtn");
+    /*=====================================================
+        BACK TO TOP
+    =====================================================*/
 
-    window.addEventListener("scroll", () => {
+    const topButton = document.getElementById("topBtn");
 
-        if (!topBtn) return;
+    function handleTopButton() {
 
-        if (window.scrollY > 400) {
+        if (!topButton) return;
 
-            topBtn.style.display = "flex";
+        if (window.scrollY > 350) {
+
+            topButton.style.display = "flex";
 
         } else {
 
-            topBtn.style.display = "none";
+            topButton.style.display = "none";
 
         }
 
-    });
+    }
 
-    if (topBtn) {
+    window.addEventListener("scroll", handleTopButton);
 
-        topBtn.addEventListener("click", () => {
+    if (topButton) {
+
+        topButton.addEventListener("click", () => {
 
             window.scrollTo({
 
                 top: 0,
+
                 behavior: "smooth"
 
             });
@@ -139,20 +157,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /*=================================
-            ACTIVE NAVIGATION
-    =================================*/
+    /*=====================================================
+        ACTIVE NAVIGATION
+    =====================================================*/
 
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
 
-    window.addEventListener("scroll", () => {
+    const navigationLinks =
+        document.querySelectorAll(".nav-links a");
 
-        let current = "";
+    function activateNavigation() {
+
+        let currentSection = "";
 
         sections.forEach(section => {
 
-            const sectionTop = section.offsetTop - 150;
+            const sectionTop = section.offsetTop - 120;
+
             const sectionHeight = section.offsetHeight;
 
             if (
@@ -162,17 +183,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ) {
 
-                current = section.getAttribute("id");
+                currentSection = section.id;
 
             }
 
         });
 
-        navLinks.forEach(link => {
+        navigationLinks.forEach(link => {
 
             link.classList.remove("active");
 
-            if (link.getAttribute("href") === "#" + current) {
+            if (link.getAttribute("href") === "#" + currentSection) {
 
                 link.classList.add("active");
 
@@ -180,103 +201,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-    });
-
-    /*=================================
-            SMOOTH SCROLL
-    =================================*/
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-        anchor.addEventListener("click", function (e) {
-
-            const target = document.querySelector(
-
-                this.getAttribute("href")
-
-            );
-
-            if (target) {
-
-                e.preventDefault();
-
-                target.scrollIntoView({
-
-                    behavior: "smooth",
-                    block: "start"
-
-                });
-
-            }
-
-        });
-
-    });
-    /*=================================
-            DARK / LIGHT MODE
-    =================================*/
-
-    const themeToggle = document.getElementById("themeToggle");
-
-    if (themeToggle) {
-
-        const icon = themeToggle.querySelector("i");
-
-        if (localStorage.getItem("theme") === "light") {
-
-            document.body.classList.add("light");
-
-            if (icon) {
-
-                icon.classList.replace("fa-moon", "fa-sun");
-
-            }
-
-        }
-
-        themeToggle.addEventListener("click", () => {
-
-            document.body.classList.toggle("light");
-
-            const light = document.body.classList.contains("light");
-
-            localStorage.setItem(
-                "theme",
-                light ? "light" : "dark"
-            );
-
-            if (icon) {
-
-                if (light) {
-
-                    icon.classList.replace("fa-moon", "fa-sun");
-
-                } else {
-
-                    icon.classList.replace("fa-sun", "fa-moon");
-
-                }
-
-            }
-
-        });
-
     }
 
-    /*=================================
-            NAVBAR SHADOW
-    =================================*/
+    window.addEventListener("scroll", activateNavigation);
+
+    /*=====================================================
+        SMOOTH SCROLL
+    =====================================================*/
+
+    navigationLinks.forEach(link => {
+
+        link.addEventListener("click", function (e) {
+
+            const target =
+                document.querySelector(this.getAttribute("href"));
+
+            if (!target) return;
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "start"
+
+            });
+
+        });
+
+    });
+
+    /*=====================================================
+        NAVBAR SHADOW
+    =====================================================*/
 
     const navbar = document.querySelector(".navbar");
 
-    window.addEventListener("scroll", () => {
+    function navbarEffect() {
 
         if (!navbar) return;
 
         if (window.scrollY > 60) {
 
             navbar.style.boxShadow =
-                "0 8px 30px rgba(0,229,255,.18)";
+                "0 8px 25px rgba(0,229,255,.18)";
 
         } else {
 
@@ -284,251 +253,310 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+    }
+
+    window.addEventListener("scroll", navbarEffect);
+
+    /*=====================================================
+        PART 1 END
+        DO NOT ADD });
+=====================================================*/
+                              /*=====================================================
+        HERO PARALLAX
+    =====================================================*/
+
+    const heroImage = document.querySelector(".hero-image img");
+
+    if (heroImage) {
+
+        document.addEventListener("mousemove", (e) => {
+
+            const x = (window.innerWidth / 2 - e.clientX) / 45;
+            const y = (window.innerHeight / 2 - e.clientY) / 45;
+
+            heroImage.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+        });
+
+    }
+
+    /*=====================================================
+        SKILL BAR ANIMATION
+    =====================================================*/
+
+    const skillBars = document.querySelectorAll(".value");
+
+    const skillObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            const bar = entry.target;
+
+            const finalWidth = bar.dataset.width || bar.style.width;
+
+            bar.style.width = "0";
+
+            setTimeout(() => {
+
+                bar.style.transition = "width 1.5s ease";
+
+                bar.style.width = finalWidth;
+
+            }, 200);
+
+            skillObserver.unobserve(bar);
+
+        });
+
+    }, {
+
+        threshold: 0.4
+
     });
 
-    /*=================================
-            HERO PARALLAX
-    =================================*/
+    skillBars.forEach(bar => {
 
-    const heroImage =
-        document.querySelector(".hero-image img");
+        if (bar.style.width !== "") {
 
-    document.addEventListener("mousemove", (e) => {
+            bar.dataset.width = bar.style.width;
 
-        if (!heroImage) return;
+        }
 
-        const x =
-            (window.innerWidth / 2 - e.clientX) / 45;
-
-        const y =
-            (window.innerHeight / 2 - e.clientY) / 45;
-
-        heroImage.style.transform =
-            `translate(${x}px,${y}px)`;
+        skillObserver.observe(bar);
 
     });
 
-    /*=================================
-            HERO FADE
-    =================================*/
+    /*=====================================================
+        FADE-IN ANIMATION
+    =====================================================*/
 
-    const hero = document.querySelector(".hero");
+    const fadeItems = document.querySelectorAll(
 
-    window.addEventListener("scroll", () => {
+        ".about-content, .protocol-card, .project-card"
 
-        if (!hero) return;
+    );
 
-        hero.style.opacity = Math.max(
-            0,
-            1 - window.scrollY / 700
-        );
+    const fadeObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+            fadeObserver.unobserve(entry.target);
+
+        });
+
+    }, {
+
+        threshold: 0.2
 
     });
 
-    /*=================================
-            SKILL CARD ANIMATION
-    =================================*/
+    fadeItems.forEach(item => {
 
-    const skillCards =
-        document.querySelectorAll(".skill-card");
+        item.style.opacity = "0";
+        item.style.transform = "translateY(40px)";
+        item.style.transition = ".8s ease";
 
-    const skillObserver =
-        new IntersectionObserver((entries) => {
+        fadeObserver.observe(item);
 
-            entries.forEach(entry => {
+    });
 
-                if (entry.isIntersecting) {
-fz
-                    entry.target.style.opacity = "1";
+    /*=====================================================
+        PROTOCOL LED BLINK
+    =====================================================*/
 
-                    entry.target.style.transform =
-                        "translateY(0)";
+    const leds = document.querySelectorAll(".led");
+
+    if (leds.length > 0) {
+
+        setInterval(() => {
+
+            leds.forEach(led => {
+
+                led.classList.toggle("active");
+
+            });
+
+        }, 700);
+
+    }
+
+    /*=====================================================
+        COUNTER ANIMATION
+    =====================================================*/
+
+    const counters = document.querySelectorAll(".counter");
+
+    const counterObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+
+            const target = Number(counter.dataset.target);
+
+            let value = 0;
+
+            const update = () => {
+
+                const increment = Math.ceil(target / 80);
+
+                value += increment;
+
+                if (value < target) {
+
+                    counter.textContent = value;
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    counter.textContent = target;
 
                 }
 
-            });
+            };
 
-        }, {
+            update();
 
-            threshold: 0.25
+            counterObserver.unobserve(counter);
 
         });
 
-    skillCards.forEach(card => {
+    }, {
 
-        card.style.opacity = "0";
-
-        card.style.transform = "translateY(40px)";
-
-        card.style.transition = ".7s ease";
-
-        skillObserver.observe(card);
+        threshold: 0.5
 
     });
-
-    /*=================================
-            PROJECT CARD ANIMATION
-    =================================*/
-
-    const projects =
-        document.querySelectorAll(".project-card");
-
-    const projectObserver =
-        new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-                        "translateY(0)";
-
-                }
-
-            });
-
-        }, {
-
-            threshold: 0.2
-
-        });
-
-    projects.forEach(card => {
-
-        card.style.opacity = "0";
-
-        card.style.transform = "translateY(60px)";
-
-        card.style.transition = ".8s ease";
-
-        projectObserver.observe(card);
-
-    });
-
-    /*=================================
-            ACHIEVEMENT COUNTER
-    =================================*/
-
-    const counters =
-        document.querySelectorAll(".counter");
-
-    const counterObserver =
-        new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) return;
-
-                const counter = entry.target;
-
-                const target =
-                    Number(counter.dataset.target);
-
-                let current = 0;
-
-                const speed = target / 60;
-
-                const update = () => {
-
-                    current += speed;
-
-                    if (current < target) {
-
-                        counter.textContent =
-                            Math.floor(current);
-
-                        requestAnimationFrame(update);
-
-                    } else {
-
-                        counter.textContent = target;
-
-                    }
-
-                };
-
-                update();
-
-                counterObserver.unobserve(counter);
-
-            });
-
-        }, {
-
-            threshold: 0.4
-
-        });
 
     counters.forEach(counter => {
 
         counterObserver.observe(counter);
 
     });
-        /*=================================
-            TERMINAL TYPEWRITER
-    =================================*/
 
-    const terminal = document.querySelector(".terminal pre");
+    /*=====================================================
+        PROJECT IMAGE HOVER
+    =====================================================*/
 
-    if (terminal) {
+    const projectImages = document.querySelectorAll(".project-image img");
 
-        const text = terminal.textContent;
+    projectImages.forEach(img => {
 
-        terminal.textContent = "";
+        img.addEventListener("mouseenter", () => {
 
-        let index = 0;
+            img.style.transition = ".4s";
 
-        const typeTerminal = () => {
-
-            if (index < text.length) {
-
-                terminal.textContent += text.charAt(index);
-
-                index++;
-
-                setTimeout(typeTerminal, 20);
-
-            }
-
-        };
-
-        const terminalObserver = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    typeTerminal();
-
-                    terminalObserver.unobserve(entry.target);
-
-                }
-
-            });
-
-        }, {
-
-            threshold: 0.4
+            img.style.transform = "scale(1.05)";
 
         });
 
-        terminalObserver.observe(terminal);
+        img.addEventListener("mouseleave", () => {
+
+            img.style.transform = "scale(1)";
+
+        });
+
+    });
+
+    /*=====================================================
+        HERO FADE
+    =====================================================*/
+
+    const heroSection = document.querySelector(".hero");
+
+    window.addEventListener("scroll", () => {
+
+        if (!heroSection) return;
+
+        heroSection.style.opacity =
+            Math.max(0.25, 1 - window.scrollY / 800);
+
+    });
+
+    /*=====================================================
+        PART 2 END
+        DO NOT ADD });
+    =====================================================*/
+                              /*=====================================================
+        TERMINAL TYPEWRITER
+    =====================================================*/
+
+    const terminal = document.querySelector(".terminal");
+
+    if (terminal) {
+
+        const spans = terminal.querySelectorAll("span");
+
+        spans.forEach(span => {
+
+            const text = span.textContent;
+
+            span.textContent = "";
+
+            let i = 0;
+
+            const type = () => {
+
+                if (i < text.length) {
+
+                    span.textContent += text.charAt(i);
+
+                    i++;
+
+                    setTimeout(type, 25);
+
+                }
+
+            };
+
+            const observer = new IntersectionObserver(entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        type();
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, {
+
+                threshold: 0.4
+
+            });
+
+            observer.observe(span);
+
+        });
 
     }
 
-    /*=================================
-            BUTTON RIPPLE EFFECT
-    =================================*/
+    /*=====================================================
+        BUTTON RIPPLE EFFECT
+    =====================================================*/
 
     document.querySelectorAll(".btn").forEach(button => {
+
+        button.style.position = "relative";
+        button.style.overflow = "hidden";
 
         button.addEventListener("click", function (e) {
 
             const ripple = document.createElement("span");
-
-            ripple.className = "ripple";
 
             const size = Math.max(this.clientWidth, this.clientHeight);
 
@@ -537,11 +565,14 @@ fz
             ripple.style.width = size + "px";
             ripple.style.height = size + "px";
 
-            ripple.style.left =
-                (e.clientX - rect.left - size / 2) + "px";
-
-            ripple.style.top =
-                (e.clientY - rect.top - size / 2) + "px";
+            ripple.style.position = "absolute";
+            ripple.style.borderRadius = "50%";
+            ripple.style.background = "rgba(255,255,255,.35)";
+            ripple.style.transform = "scale(0)";
+            ripple.style.animation = "ripple .6s linear";
+            ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+            ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+            ripple.style.pointerEvents = "none";
 
             this.appendChild(ripple);
 
@@ -555,67 +586,30 @@ fz
 
     });
 
-    /*=================================
-            IMAGE HOVER EFFECT
-    =================================*/
+    /*=====================================================
+        MOBILE MENU
+    =====================================================*/
 
-    document.querySelectorAll("img").forEach(img => {
+    const menuButton = document.querySelector(".menu-btn");
+    const mobileMenu = document.querySelector(".nav-links");
 
-        img.addEventListener("mouseenter", () => {
+    if (menuButton && mobileMenu) {
 
-            img.style.transition = ".35s";
+        menuButton.addEventListener("click", () => {
 
-            img.style.transform = "scale(1.03)";
-
-        });
-
-        img.addEventListener("mouseleave", () => {
-
-            img.style.transform = "scale(1)";
-
-        });
-
-    });
-
-    /*=================================
-            PREVENT IMAGE DRAGGING
-    =================================*/
-
-    document.querySelectorAll("img").forEach(img => {
-
-        img.setAttribute("draggable", "false");
-
-    });
-
-    /*=================================
-            MOBILE MENU
-    =================================*/
-
-    const navLinks = document.querySelector(".nav-links");
-
-    const menuBtn = document.querySelector(".menu-btn");
-
-    if (menuBtn && navLinks) {
-
-        menuBtn.addEventListener("click", () => {
-
-            navLinks.classList.toggle("show");
+            mobileMenu.classList.toggle("show");
 
         });
 
     }
 
-    /*=================================
-            CLOSE MENU AFTER CLICK
-    =================================*/
-
     document.querySelectorAll(".nav-links a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            if (navLinks) {
+            if (mobileMenu) {
 
-                navLinks.classList.remove("show");
+                mobileMenu.classList.remove("show");
 
             }
 
@@ -623,23 +617,40 @@ fz
 
     });
 
-    /*=================================
-            CONSOLE MESSAGE
-    =================================*/
+    /*=====================================================
+        PREVENT IMAGE DRAGGING
+    =====================================================*/
+
+    document.querySelectorAll("img").forEach(img => {
+
+        img.setAttribute("draggable", "false");
+
+    });
+
+    /*=====================================================
+        CONSOLE MESSAGE
+    =====================================================*/
+
+    console.clear();
 
     console.log(
-        "%cSasinathan Rangasamy Portfolio",
-        "color:#00e5ff;font-size:18px;font-weight:bold;"
+        "%cSasinathan Rangasamy",
+        "color:#00e5ff;font-size:20px;font-weight:bold;"
     );
 
     console.log(
-        "%cEmbedded Software Engineer | STM32 | ARM Cortex-M | PIC16F877A",
-        "color:#00ff99;font-size:14px;"
+        "%cEmbedded Software Engineer",
+        "color:#00ff99;font-size:15px;"
+    );
+
+    console.log(
+        "%cSTM32 | ARM Cortex-M | PIC16F877A | Embedded C",
+        "color:#ffffff;font-size:13px;"
     );
 
     console.log(
         "%cPortfolio Loaded Successfully 🚀",
-        "color:#ffffff;font-size:13px;"
+        "color:#00e5ff;font-size:13px;"
     );
 
 });
