@@ -2,131 +2,547 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sasinathan R | Embedded Software Engineer</title>
+    <title>Sasinathan Rangasamy | Embedded Software Engineer</title>
 
     <meta name="description"
-        content="Portfolio of Sasinathan R - Embedded Software Engineer specializing in Embedded C, STM32, ARM Cortex-M, RTOS and Firmware Development.">
+        content="Sasinathan Rangasamy | Embedded Software Engineer specializing in Embedded C, STM32, ARM Cortex-M, PIC16F877A, Firmware Development, Device Drivers and Communication Protocols.">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <!-- AOS -->
-    <link rel="stylesheet"
-        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- ===================== NAVBAR ===================== -->
+<!-- ================= LOADER ================= -->
 
-    <nav class="navbar">
+<div id="loader">
 
-        <div class="container">
+    <div class="loader-circle"></div>
 
-            <div class="logo">
+    <h2>Initializing Embedded System...</h2>
+
+</div>
+
+<!-- ================= SCROLL PROGRESS ================= -->
+
+<div id="progressBar"></div>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img src="assets/logo.png" alt="Logo">
+
+        <div>
+
+            <h3>Sasinathan Rangasamy</h3>
+
+            <span>Embedded Software Engineer</span>
+
+        </div>
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#education">Education</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+    <div class="nav-icons">
+
+        <a href="https://github.com/sasinathan4950-spec"
+            target="_blank">
+
+            <i class="fab fa-github"></i>
+
+        </a>
+
+        <a href="#">
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+        <button id="themeToggle">
+
+            <i class="fas fa-moon"></i>
+
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content" data-aos="fade-right">
+
+        <div class="status">
+
+            <span class="dot"></span>
+
+            SYSTEM STATUS : ONLINE
+
+        </div>
+
+        <h1>
+
+            Sasinathan
+
+            <span>Rangasamy</span>
+
+        </h1>
+
+        <h2 id="typing"></h2>
+
+        <p>
+
+            Passionate Embedded Software Engineer specializing in
+
+            STM32, ARM Cortex-M, PIC16F877A,
+
+            Embedded C, Firmware Development,
+
+            Device Drivers and Communication Protocols.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
 
                 <i class="fas fa-microchip"></i>
-                Embedded.System
 
-            </div>
+                View Projects
 
-            <ul class="nav-links">
+            </a>
 
-                <li><a href="#home">Home</a></li>
+            <a href="assets/resume.pdf"
 
-                <li><a href="#about">About</a></li>
+                class="btn btn-outline"
 
-                <li><a href="#skills">Skills</a></li>
+                target="_blank">
 
-                <li><a href="#protocols">Protocols</a></li>
+                <i class="fas fa-file-download"></i>
 
-                <li><a href="#projects">Projects</a></li>
+                Download Resume
 
-                <li><a href="#contact">Contact</a></li>
+            </a>
 
-            </ul>
+        </div>
 
-            <div class="menu-btn">
+        <div class="hero-tech">
 
-                <i class="fas fa-bars"></i>
+            <span>STM32</span>
+
+            <span>ARM Cortex-M</span>
+
+            <span>PIC16F877A</span>
+
+            <span>Embedded C</span>
+
+            <span>UART</span>
+
+            <span>SPI</span>
+
+            <span>I²C</span>
+
+            <span>ADC</span>
+
+            <span>PWM</span>
+
+            <span>GPIO</span>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image" data-aos="fade-left">
+
+        <img src="assets/stm32-board-hero.png"
+
+            alt="STM32 Board">
+
+    </div>
+
+</section>
+<!-- ==========================================
+                ABOUT SECTION
+=========================================== -->
+
+<section id="about" class="about section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>About Me</h2>
+
+        <p>Embedded Software Engineer passionate about developing efficient firmware solutions.</p>
+
+    </div>
+
+    <div class="about-container">
+
+        <!-- Profile -->
+
+        <div class="about-image" data-aos="fade-right">
+
+            <img src="assets/profile.png"
+                 alt="Sasinathan Rangasamy">
+
+        </div>
+
+        <!-- Content -->
+
+        <div class="about-content" data-aos="fade-left">
+
+            <h3>Hello, I'm <span>Sasinathan Rangasamy</span></h3>
+
+            <p>
+
+                I am an Embedded Software Engineer with hands-on experience
+                in developing firmware for STM32 ARM Cortex-M and PIC16F877A
+                microcontrollers.
+
+            </p>
+
+            <p>
+
+                I enjoy building reliable embedded systems by working with
+                peripherals such as GPIO, ADC, Timers, PWM and communication
+                interfaces including UART, SPI and I²C.
+
+            </p>
+
+            <div class="about-grid">
+
+                <div class="info-card">
+
+                    <i class="fas fa-user-graduate"></i>
+
+                    <h4>Education</h4>
+
+                    <p>B.E Electronics & Communication Engineering</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <i class="fas fa-microchip"></i>
+
+                    <h4>Specialization</h4>
+
+                    <p>Embedded Software Development</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <i class="fas fa-laptop-code"></i>
+
+                    <h4>Programming</h4>
+
+                    <p>Embedded C</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    <h4>Status</h4>
+
+                    <p>Open To Work</p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </nav>
+    </div>
 
-    <!-- ===================== HERO ===================== -->
+</section>
 
-    <section id="home" class="hero">
+<!-- ==========================================
+                SKILLS
+=========================================== -->
 
-        <div class="hero-overlay"></div>
+<section id="skills" class="skills section">
 
-        <div class="container hero-grid">
+    <div class="section-header" data-aos="fade-up">
 
-            <div class="hero-content" data-aos="fade-right">
+        <h2>Technical Skills</h2>
 
-                <span class="status">
+        <p>Firmware development technologies and embedded platforms.</p>
 
-                    ● SYSTEM STATUS : ONLINE
+    </div>
+
+    <div class="skills-grid">
+
+        <!-- Programming -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-code"></i>
+
+            <h3>Programming</h3>
+
+            <ul>
+
+                <li>Embedded C</li>
+
+                <li>C Programming</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Microcontrollers -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-microchip"></i>
+
+            <h3>Microcontrollers</h3>
+
+            <ul>
+
+                <li>STM32F4 Series</li>
+
+                <li>ARM Cortex-M</li>
+
+                <li>PIC16F877A</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Communication -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-network-wired"></i>
+
+            <h3>Protocols</h3>
+
+            <ul>
+
+                <li>UART</li>
+
+                <li>SPI</li>
+
+                <li>I²C</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Peripherals -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-memory"></i>
+
+            <h3>Peripherals</h3>
+
+            <ul>
+
+                <li>GPIO</li>
+
+                <li>ADC</li>
+
+                <li>PWM</li>
+
+                <li>Timers</li>
+
+                <li>Interrupts</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Tools -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-toolbox"></i>
+
+            <h3>Tools</h3>
+
+            <ul>
+
+                <li>STM32CubeIDE</li>
+
+                <li>STM32CubeMX</li>
+
+                <li>MPLAB X IDE</li>
+
+                <li>XC8 Compiler</li>
+
+                <li>Keil uVision</li>
+
+                <li>Git</li>
+
+                <li>VS Code</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Firmware -->
+
+        <div class="skill-card" data-aos="zoom-in">
+
+            <i class="fas fa-cogs"></i>
+
+            <h3>Firmware</h3>
+
+            <ul>
+
+                <li>Device Drivers</li>
+
+                <li>Firmware Development</li>
+
+                <li>Embedded Systems</li>
+
+                <li>Debugging</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+                PROJECTS SECTION
+========================================== -->
+
+<section id="projects" class="projects section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>Featured Projects</h2>
+
+        <p>
+            Real-world embedded systems developed using STM32 and PIC16F877A.
+        </p>
+
+    </div>
+
+    <div class="projects-container">
+
+        <!-- =====================================
+                PROJECT 1
+        ====================================== -->
+
+        <div class="project-card" data-aos="fade-right">
+
+            <div class="project-image">
+
+                <img src="assets/temperature-controlled-fan.jpg"
+                    alt="Temperature Controlled Fan Speed Controller">
+
+            </div>
+
+            <div class="project-content">
+
+                <span class="project-tag">
+
+                    STM32F407VG
 
                 </span>
 
-                <h1>
+                <h3>
 
-                    Hi, I'm
+                    Temperature Controlled Fan Speed Controller
 
-                    <span>Sasinathan R</span>
-
-                </h1>
-
-                <h2 id="typing"></h2>
+                </h3>
 
                 <p>
 
-                    Embedded Software Engineer passionate about designing
-                    robust firmware for STM32 and ARM Cortex-M based
-                    embedded systems using Embedded C, Device Drivers,
-                    RTOS and Communication Protocols.
+                    Designed and developed an intelligent cooling system
+                    using the STM32F407 Discovery board. The firmware reads
+                    temperature from an analog sensor using the ADC and
+                    dynamically adjusts the fan speed using PWM for
+                    efficient thermal management.
 
                 </p>
 
-                <div class="hero-buttons">
+                <div class="tech-stack">
 
-                    <a href="#projects" class="btn btn-primary">
+                    <span>Embedded C</span>
+                    <span>STM32</span>
+                    <span>ADC</span>
+                    <span>PWM</span>
+                    <span>GPIO</span>
+                    <span>Timers</span>
 
-                        <i class="fas fa-code"></i>
+                </div>
 
-                        View Projects
+                <ul class="project-features">
 
-                    </a>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        STM32F407 ARM Cortex-M4
+                    </li>
 
-                    <a href="assets/resume.pdf"
-                        class="btn btn-outline"
-                        download>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        ADC Temperature Acquisition
+                    </li>
 
-                        <i class="fas fa-download"></i>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        PWM Based Fan Speed Control
+                    </li>
 
-                        Resume
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Modular Firmware Development
+                    </li>
 
-                    </a>
+                </ul>
+
+                <div class="project-buttons">
 
                     <a href="https://github.com/sasinathan4950-spec"
                         target="_blank"
-                        class="btn btn-dark">
+                        class="btn btn-primary">
 
                         <i class="fab fa-github"></i>
 
@@ -136,1058 +552,548 @@
 
                 </div>
 
-                <div class="hero-stats">
-
-                    <div class="stat-box">
-
-                        <h3>15+</h3>
-
-                        <p>Embedded Projects</p>
-
-                    </div>
-
-                    <div class="stat-box">
-
-                        <h3>10+</h3>
-
-                        <p>Drivers Developed</p>
-
-                    </div>
-
-                    <div class="stat-box">
-
-                        <h3>100%</h3>
-
-                        <p>Passion</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hero-image" data-aos="zoom-in">
-
-                <img src="assets/stm32-board.png"
-                    alt="STM32 Development Board">
-
             </div>
 
         </div>
 
-        <div class="scroll-indicator">
+        <!-- =====================================
+                PROJECT 2
+        ====================================== -->
 
-            <a href="#about">
+        <div class="project-card reverse"
+            data-aos="fade-left">
 
-                <i class="fas fa-chevron-down"></i>
+            <div class="project-image">
 
-            </a>
-
-        </div>
-
-    </section>
-        <!-- ===================== ABOUT ===================== -->
-
-    <section id="about" class="about">
-
-        <div class="container">
-
-            <h2 class="section-title" data-aos="fade-up">
-                About Me
-            </h2>
-
-            <div class="about-grid">
-
-                <div class="about-image" data-aos="fade-right">
-
-                    <img src="assets/profile.png"
-                        alt="Sasinathan R">
-
-                </div>
-
-                <div class="about-content" data-aos="fade-left">
-
-                    <h3>Embedded Software Engineer</h3>
-
-                    <p>
-
-                        I am passionate about designing reliable and
-                        efficient embedded firmware for STM32 and
-                        ARM Cortex-M based systems.
-
-                    </p>
-
-                    <p>
-
-                        My expertise includes Embedded C,
-                        peripheral driver development,
-                        communication protocols,
-                        RTOS,
-                        bootloaders,
-                        debugging and firmware optimization.
-
-                    </p>
-
-                    <div class="about-info">
-
-                        <div class="info-card">
-
-                            <i class="fas fa-user"></i>
-
-                            <div>
-
-                                <h4>Name</h4>
-
-                                <p>Sasinathan R</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="info-card">
-
-                            <i class="fas fa-envelope"></i>
-
-                            <div>
-
-                                <h4>Email</h4>
-
-                                <p>
-                                    sasinathan4950@gmail.com
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="info-card">
-
-                            <i class="fas fa-location-dot"></i>
-
-                            <div>
-
-                                <h4>Location</h4>
-
-                                <p>India</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="info-card">
-
-                            <i class="fas fa-briefcase"></i>
-
-                            <div>
-
-                                <h4>Status</h4>
-
-                                <p>Open To Work</p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <img src="assets/smart-irrigation-system.jpg"
+                    alt="Smart Irrigation System">
 
             </div>
 
-        </div>
+            <div class="project-content">
 
-    </section>
+                <span class="project-tag">
 
-    <!-- ===================== EDUCATION ===================== -->
+                    PIC16F877A
 
-    <section class="education">
-
-        <div class="container">
-
-            <h2 class="section-title" data-aos="fade-up">
-
-                Education
-
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item"
-                    data-aos="fade-up">
-
-                    <span class="year">
-
-                        2024
-
-                    </span>
-
-                    <h3>
-
-                        Bachelor of Engineering
-
-                    </h3>
-
-                    <h4>
-
-                        Electronics and Communication Engineering
-
-                    </h4>
-
-                    <p>
-
-                        Built a strong foundation in embedded
-                        systems, microcontrollers,
-                        digital electronics,
-                        communication systems
-                        and firmware development.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== SKILLS ===================== -->
-
-    <section id="skills" class="skills">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Firmware Skill Dashboard
-
-            </h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-
-                    <span>Embedded C</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:95%;">
-
-                            95%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>STM32</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:92%;">
-
-                            92%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>ARM Cortex-M</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:90%;">
-
-                            90%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>UART</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:95%;">
-
-                            95%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>SPI</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:90%;">
-
-                            90%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>I²C</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:90%;">
-
-                            90%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>CAN</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:80%;">
-
-                            80%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skill-card">
-
-                    <span>FreeRTOS</span>
-
-                    <div class="progress">
-
-                        <div class="progress-bar"
-                            style="width:80%;">
-
-                            80%
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== PROTOCOL CENTER ===================== -->
-
-    <section id="protocols" class="protocols">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Protocol Dashboard
-
-            </h2>
-
-            <div class="protocol-grid">
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>UART</h3>
-
-                    <p>115200 Baud</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>SPI</h3>
-
-                    <p>Full Duplex</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>I²C</h3>
-
-                    <p>100 KHz</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>CAN</h3>
-
-                    <p>CAN 2.0B</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>PWM</h3>
-
-                    <p>Motor Control</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-                <div class="protocol-card">
-
-                    <div class="led"></div>
-
-                    <h3>ADC</h3>
-
-                    <p>12-bit Sampling</p>
-
-                    <span>ACTIVE</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-        <!-- ===================== PROJECTS ===================== -->
-
-    <section id="projects" class="projects">
-
-        <div class="container">
-
-            <h2 class="section-title" data-aos="fade-up">
-                Featured Projects
-            </h2>
-
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-
-                <div class="project-card" data-aos="fade-up">
-
-                    <div class="project-image">
-
-                        <img src="assets/fan-controller.png"
-                            alt="Temperature Based Fan Controller">
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>Temperature Based Fan Controller</h3>
-
-                        <p>
-
-                            Developed using STM32F4,
-                            ADC, PWM and Embedded C.
-                            Reads temperature sensor values
-                            and automatically adjusts fan speed.
-
-                        </p>
-
-                        <div class="tech-stack">
-
-                            <span>STM32</span>
-                            <span>ADC</span>
-                            <span>PWM</span>
-                            <span>Embedded C</span>
-
-                        </div>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/sasinathan4950-spec"
-                                target="_blank"
-                                class="btn btn-primary">
-
-                                <i class="fab fa-github"></i>
-                                GitHub
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Project 2 -->
-
-                <div class="project-card" data-aos="fade-up">
-
-                    <div class="project-image">
-
-                        <img src="assets/bootloader.png"
-                            alt="STM32 Bootloader">
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>STM32 Custom Bootloader</h3>
-
-                        <p>
-
-                            Implemented UART Bootloader
-                            supporting firmware upgrade,
-                            Flash programming and
-                            CRC verification.
-
-                        </p>
-
-                        <div class="tech-stack">
-
-                            <span>STM32</span>
-                            <span>UART</span>
-                            <span>Flash</span>
-                            <span>CRC</span>
-
-                        </div>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/sasinathan4950-spec"
-                                target="_blank"
-                                class="btn btn-primary">
-
-                                <i class="fab fa-github"></i>
-                                GitHub
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Project 3 -->
-
-                <div class="project-card" data-aos="fade-up">
-
-                    <div class="project-image">
-
-                        <img src="assets/smart-home.png"
-                            alt="Smart Home Automation">
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>Smart Home Automation</h3>
-
-                        <p>
-
-                            Designed an embedded
-                            automation system using
-                            STM32 and multiple sensors
-                            for lighting and appliance control.
-
-                        </p>
-
-                        <div class="tech-stack">
-
-                            <span>STM32</span>
-                            <span>GPIO</span>
-                            <span>UART</span>
-                            <span>I²C</span>
-
-                        </div>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/sasinathan4950-spec"
-                                target="_blank"
-                                class="btn btn-primary">
-
-                                <i class="fab fa-github"></i>
-                                GitHub
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== ARM ARCHITECTURE ===================== -->
-
-    <section id="architecture" class="architecture">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                ARM Cortex-M Architecture
-
-            </h2>
-
-            <div class="architecture-grid">
-
-                <div class="architecture-image"
-                    data-aos="fade-right">
-
-                    <img src="assets/arm-chip.png"
-                        alt="ARM Cortex-M">
-
-                </div>
-
-                <div class="architecture-content"
-                    data-aos="fade-left">
-
-                    <h3>
-
-                        ARM Cortex-M Core
-
-                    </h3>
-
-                    <p>
-
-                        ARM Cortex-M processors are
-                        designed for deterministic,
-                        real-time embedded applications.
-
-                    </p>
-
-                    <div class="feature-list">
-
-                        <div class="feature">
-
-                            <i class="fas fa-microchip"></i>
-
-                            <span>32-bit RISC CPU</span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <i class="fas fa-bolt"></i>
-
-                            <span>NVIC Interrupt Controller</span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <i class="fas fa-clock"></i>
-
-                            <span>SysTick Timer</span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <i class="fas fa-memory"></i>
-
-                            <span>Memory Protection</span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <i class="fas fa-gears"></i>
-
-                            <span>DMA Support</span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <i class="fas fa-code"></i>
-
-                            <span>CMSIS Compatible</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== CERTIFICATIONS ===================== -->
-
-    <section id="certifications">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Certifications
-
-            </h2>
-
-            <div class="certificate-grid">
-
-                <div class="certificate-card">
-
-                    <i class="fas fa-award"></i>
-
-                    <h3>Embedded Systems</h3>
-
-                    <p>
-                        Firmware Development &
-                        STM32 Programming
-                    </p>
-
-                </div>
-
-                <div class="certificate-card">
-
-                    <i class="fas fa-award"></i>
-
-                    <h3>ARM Cortex-M</h3>
-
-                    <p>
-
-                        Embedded Driver Development
-
-                    </p>
-
-                </div>
-
-                <div class="certificate-card">
-
-                    <i class="fas fa-award"></i>
-
-                    <h3>Embedded C</h3>
-
-                    <p>
-
-                        Professional Programming
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== EXPERIENCE ===================== -->
-
-    <section id="experience">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Experience Highlights
-
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <span class="year">
-
-                        Present
-
-                    </span>
-
-                    <h3>
-
-                        Embedded Software Engineer
-
-                    </h3>
-
-                    <p>
-
-                        Working on STM32 firmware,
-                        Embedded C,
-                        peripheral drivers,
-                        communication protocols,
-                        debugging,
-                        and RTOS-based applications.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-        <!-- ===================== CONTACT ===================== -->
-
-    <section id="contact" class="contact">
-
-        <div class="container">
-
-            <h2 class="section-title" data-aos="fade-up">
-
-                Contact Terminal
-
-            </h2>
-
-            <div class="contact-grid">
-
-                <!-- Terminal -->
-
-                <div class="terminal" data-aos="fade-right">
-
-<pre>
-$ whoami
-Sasinathan R
-
-$ role
-Embedded Software Engineer
-
-$ skills
-Embedded C
-STM32
-ARM Cortex-M
-UART
-SPI
-I²C
-CAN
-RTOS
-
-$ email
-sasinathan4950@gmail.com
-
-$ github
-github.com/sasinathan4950-spec
-
-$ status
-OPEN_TO_WORK
-</pre>
-
-                </div>
-
-                <!-- Contact Form -->
-
-                <div class="contact-form" data-aos="fade-left">
-
-                    <form action="#">
-
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            required>
-
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            required>
-
-                        <input
-                            type="text"
-                            placeholder="Subject"
-                            required>
-
-                        <textarea
-                            rows="6"
-                            placeholder="Your Message"
-                            required></textarea>
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary">
-
-                            <i class="fas fa-paper-plane"></i>
-
-                            Send Message
-
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== SOCIAL ===================== -->
-
-    <section class="social-section">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Connect With Me
-
-            </h2>
-
-            <div class="social-icons">
-
-                <a href="https://github.com/sasinathan4950-spec"
-                    target="_blank">
-
-                    <i class="fab fa-github"></i>
-
-                </a>
-
-                <a href="mailto:sasinathan4950@gmail.com">
-
-                    <i class="fas fa-envelope"></i>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fab fa-linkedin"></i>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fab fa-twitter"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================== FOOTER ===================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-content">
+                </span>
 
                 <h3>
 
-                    Sasinathan R
+                    Smart Irrigation System
 
                 </h3>
 
                 <p>
 
-                    Embedded Software Engineer
+                    Developed an automatic irrigation system using the
+                    PIC16F877A microcontroller. The system continuously
+                    monitors soil moisture and controls a water pump
+                    through a relay module, helping reduce water
+                    consumption and improve irrigation efficiency.
 
                 </p>
 
-                <p>
+                <div class="tech-stack">
 
-                    Designing Reliable Embedded Firmware
-                    for STM32 & ARM Cortex-M Systems.
+                    <span>Embedded C</span>
+                    <span>PIC16F877A</span>
+                    <span>ADC</span>
+                    <span>Relay</span>
+                    <span>LCD</span>
+                    <span>GPIO</span>
 
-                </p>
+                </div>
 
-                <div class="footer-links">
+                <ul class="project-features">
 
-                    <a href="#home">Home</a>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Soil Moisture Monitoring
+                    </li>
 
-                    <a href="#about">About</a>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Automatic Pump Control
+                    </li>
 
-                    <a href="#skills">Skills</a>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        LCD Status Display
+                    </li>
 
-                    <a href="#projects">Projects</a>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Embedded C Firmware
+                    </li>
 
-                    <a href="#contact">Contact</a>
+                </ul>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/sasinathan4950-spec"
+                        target="_blank"
+                        class="btn btn-primary">
+
+                        <i class="fab fa-github"></i>
+
+                        GitHub
+
+                    </a>
 
                 </div>
 
             </div>
 
-            <hr>
+        </div>
 
-            <p class="copyright">
+    </div>
 
-                © <span id="year"></span>
-                Sasinathan R.
-                All Rights Reserved.
+</section>
+<!-- ==========================================
+                EDUCATION SECTION
+========================================== -->
+
+<section id="education" class="education section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>Education</h2>
+
+        <p>
+            My academic journey and foundation in Embedded Systems.
+        </p>
+
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-right">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <span class="timeline-year">
+                    2021 - 2025
+                </span>
+
+                <h3>
+                    Bachelor of Engineering
+                </h3>
+
+                <h4>
+                    Electronics and Communication Engineering
+                </h4>
+
+                <p>
+
+                    Muthayammal Engineering College,
+                    Rasipuram, Tamil Nadu.
+
+                </p>
+
+                <div class="timeline-info">
+
+                    <span>
+                        <i class="fas fa-graduation-cap"></i>
+                        B.E Degree
+                    </span>
+
+                    <span>
+                        <i class="fas fa-book"></i>
+                        Embedded Systems
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            CERTIFICATIONS SECTION
+========================================== -->
+
+<section id="certifications" class="certifications section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>Certifications</h2>
+
+        <p>
+
+            Professional learning and technical development.
+
+        </p>
+
+    </div>
+
+    <div class="certificate-grid">
+
+        <div class="certificate-card"
+            data-aos="zoom-in">
+
+            <i class="fas fa-certificate"></i>
+
+            <h3>
+
+                Embedded Systems
+
+            </h3>
+
+            <p>
+
+                Hands-on learning in Embedded C,
+                Microcontrollers and Peripheral Programming.
 
             </p>
 
         </div>
 
-    </footer>
+        <div class="certificate-card"
+            data-aos="zoom-in">
 
-    <!-- ===================== BACK TO TOP ===================== -->
+            <i class="fas fa-microchip"></i>
 
-    <button id="topBtn">
+            <h3>
 
-        <i class="fas fa-arrow-up"></i>
+                STM32 Development
 
-    </button>
+            </h3>
 
-    <!-- ===================== SCRIPTS ===================== -->
+            <p>
 
-    <!-- Typed.js -->
+                Firmware development using
+                STM32 ARM Cortex-M
+                microcontrollers.
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+            </p>
 
-    <!-- AOS -->
+        </div>
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <div class="certificate-card"
+            data-aos="zoom-in">
 
-    <!-- Custom JS -->
+            <i class="fas fa-code"></i>
 
-    <script src="script.js"></script>
+            <h3>
+
+                Embedded C Programming
+
+            </h3>
+
+            <p>
+
+                Developing embedded firmware
+                using Embedded C language
+                and modular programming.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                ACHIEVEMENTS
+========================================== -->
+
+<section class="achievements section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>Highlights</h2>
+
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+
+            <h3>2+</h3>
+
+            <p>Embedded Projects</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>10+</h3>
+
+            <p>Embedded Technologies</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>100%</h3>
+
+            <p>Passion for Firmware Development</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>Open</h3>
+
+            <p>Available for Opportunities</p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+                CONTACT SECTION
+========================================== -->
+
+<section id="contact" class="contact section">
+
+    <div class="section-header" data-aos="fade-up">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Let's connect and build innovative embedded solutions together.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <!-- Contact Terminal -->
+
+        <div class="terminal" data-aos="fade-right">
+
+            <div class="terminal-header">
+
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+
+            </div>
+
+<pre>
+
+$ whoami
+
+Sasinathan Rangasamy
+
+$ role
+
+Embedded Software Engineer
+
+$ specialization
+
+Embedded C
+STM32
+ARM Cortex-M
+PIC16F877A
+Firmware Development
+
+$ github
+
+github.com/sasinathan4950-spec
+
+$ status
+
+OPEN_TO_WORK
+
+</pre>
+
+        </div>
+
+        <!-- Contact Card -->
+
+        <div class="contact-card" data-aos="fade-left">
+
+            <h3>Get In Touch</h3>
+
+            <p>
+
+                I'm currently looking for opportunities in
+                Embedded Software and Firmware Development.
+
+            </p>
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+                <div>
+
+                    <h4>Email</h4>
+
+                    <a href="mailto:sasinathan4950@gmail.com">
+                        sasinathan4950@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fab fa-github"></i>
+
+                <div>
+
+                    <h4>GitHub</h4>
+
+                    <a href="https://github.com/sasinathan4950-spec"
+                        target="_blank">
+
+                        github.com/sasinathan4950-spec
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Replace with your LinkedIn URL -->
+            <div class="contact-item">
+
+                <i class="fab fa-linkedin"></i>
+
+                <div>
+
+                    <h4>LinkedIn</h4>
+
+                    <a href="#">
+
+                        Add Your LinkedIn Profile
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="assets/resume.pdf"
+
+                target="_blank"
+
+                class="btn btn-primary resume-btn">
+
+                <i class="fas fa-download"></i>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <img src="assets/logo.png"
+                alt="Logo">
+
+            <div>
+
+                <h3>Sasinathan Rangasamy</h3>
+
+                <p>Embedded Software Engineer</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="footer-social">
+
+            <a href="https://github.com/sasinathan4950-spec"
+                target="_blank">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+            <a href="mailto:sasinathan4950@gmail.com">
+
+                <i class="fas fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © <span id="year"></span>
+
+            Sasinathan Rangasamy
+
+            | Embedded Software Engineer
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Back To Top -->
+
+<button id="topBtn">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+<!-- Typed JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Script -->
+
+<script src="script.js"></script>
 
 </body>
 
