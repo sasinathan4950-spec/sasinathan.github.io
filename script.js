@@ -1,158 +1,212 @@
 /* ==========================================
    PORTFOLIO JAVASCRIPT
-   Author: Sasinathan Rangasamy
-==========================================*/
+   Author: Sasinathan R
+========================================== */
 
-// =========================
-// AOS Initialization
-// =========================
+document.addEventListener("DOMContentLoaded", () => {
 
-AOS.init({
-    duration: 1000,
-    once: true,
-    easing: "ease-in-out"
-});
+    // =========================
+    // AOS Initialization
+    // =========================
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out"
+    });
 
-// =========================
-// Typing Animation
-// =========================
+    // =========================
+    // Typing Animation
+    // =========================
+    const typingElement = document.querySelector("#typing");
 
-new Typed("#typing", {
-    strings: [
-        "Embedded Software Engineer",
-        "Firmware Developer",
-        "Embedded C Programmer",
-        "ARM Cortex-M Enthusiast",
-        "Microcontroller Developer"
-    ],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 1500,
-    loop: true
-});
-
-// =========================
-// Scroll To Top Button
-// =========================
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
+    if (typingElement) {
+        new Typed("#typing", {
+            strings: [
+                "Embedded Software Engineer",
+                "Firmware Developer",
+                "Embedded C Programmer",
+                "ARM Cortex-M Enthusiast",
+                "Microcontroller Developer"
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1500,
+            loop: true
+        });
     }
 
-});
+    // =========================
+    // Scroll To Top Button
+    // =========================
+    const topBtn = document.getElementById("topBtn");
 
-topBtn.addEventListener("click", () => {
+    if (topBtn) {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+        window.addEventListener("scroll", () => {
 
-});
+            if (window.scrollY > 300) {
+                topBtn.style.display = "flex";
+            } else {
+                topBtn.style.display = "none";
+            }
 
-// =========================
-// Active Navigation
-// =========================
+        });
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+        topBtn.addEventListener("click", () => {
 
-window.addEventListener("scroll", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-    let current = "";
+        });
+    }
 
-    sections.forEach(section => {
+    // =========================
+    // Active Navigation
+    // =========================
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-        const sectionTop = section.offsetTop - 150;
+    window.addEventListener("scroll", () => {
 
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+        let currentSection = "";
 
-    });
+        sections.forEach(section => {
 
-    navLinks.forEach(link => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.clientHeight;
 
-        link.classList.remove("active");
+            if (
+                window.pageYOffset >= sectionTop &&
+                window.pageYOffset < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
 
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
+        });
 
-    });
+        navLinks.forEach(link => {
 
-});
+            link.classList.remove("active");
 
-// =========================
-// Fade-in Project Cards
-// =========================
+            if (
+                link.getAttribute("href") ===
+                `#${currentSection}`
+            ) {
+                link.classList.add("active");
+            }
 
-const cards = document.querySelectorAll(".project-card");
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-}, {
-    threshold: 0.2
-});
-
-cards.forEach(card => {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(40px)";
-    card.style.transition = "all .8s ease";
-
-    observer.observe(card);
-
-});
-
-// =========================
-// Hero Button Hover Effect
-// =========================
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(button => {
-
-    button.addEventListener("mouseenter", () => {
-
-        button.style.transform = "translateY(-4px) scale(1.05)";
+        });
 
     });
 
-    button.addEventListener("mouseleave", () => {
+    // =========================
+    // Smooth Scrolling
+    // =========================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-        button.style.transform = "translateY(0) scale(1)";
+        anchor.addEventListener("click", function (e) {
+
+            const target = document.querySelector(
+                this.getAttribute("href")
+            );
+
+            if (target) {
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+    // =========================
+    // Navbar Scroll Effect
+    // =========================
+    const navbar = document.querySelector(".navbar");
+
+    if (navbar) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+        });
+
+    }
+
+    // =========================
+    // Project Cards Animation
+    // =========================
+    const cards = document.querySelectorAll(".project-card");
+
+    if (cards.length > 0) {
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+        cards.forEach(card => {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(40px)";
+            card.style.transition =
+                "opacity 0.8s ease, transform 0.8s ease";
+
+            observer.observe(card);
+
+        });
+
+    }
+
+    // =========================
+    // Dynamic Footer Year
+    // =========================
+    const footerText = document.querySelector("footer p");
+
+    if (footerText) {
+
+        footerText.innerHTML =
+            `© ${new Date().getFullYear()} Sasinathan R | Embedded Software Engineer`;
+
+    }
+
+    // =========================
+    // Page Loaded Effect
+    // =========================
+    window.addEventListener("load", () => {
+
+        document.body.classList.add("loaded");
 
     });
 
 });
-
-// =========================
-// Footer Year
-// =========================
-
-const footer = document.querySelector("footer p");
-
-if (footer) {
-
-    footer.innerHTML =
-        `© ${new Date().getFullYear()} Sasinathan Rangasamy | Embedded Software Engineer`;
-
-}
