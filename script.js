@@ -1,353 +1,170 @@
 /*==================================================
-    EMBEDDED SYSTEM PORTFOLIO
-    Author : Sasinathan R
+    EMBEDDED DASHBOARD PORTFOLIO
+    Author : Sasinathan Rangasamy
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*========================================
-      AOS
-    ========================================*/
+    /*=================================
+            AOS
+    =================================*/
 
-    if (typeof AOS !== "undefined") {
+    AOS.init({
 
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: "ease-in-out"
-        });
-
-    }
-
-    /*========================================
-      TYPED JS
-    ========================================*/
-
-    if (document.getElementById("typing")) {
-
-        new Typed("#typing", {
-
-            strings: [
-
-                "Embedded Software Engineer",
-
-                "STM32 Firmware Developer",
-
-                "ARM Cortex-M Programmer",
-
-                "Embedded C Developer",
-
-                "RTOS Enthusiast",
-
-                "Device Driver Developer"
-
-            ],
-
-            typeSpeed: 60,
-
-            backSpeed: 35,
-
-            backDelay: 1400,
-
-            loop: true
-
-        });
-
-    }
-
-    /*========================================
-      FOOTER YEAR
-    ========================================*/
-
-    const year = document.getElementById("year");
-
-    if (year) {
-
-        year.textContent = new Date().getFullYear();
-
-    }
-
-    /*========================================
-      BACK TO TOP BUTTON
-    ========================================*/
-
-    const topBtn = document.getElementById("topBtn");
-
-    window.addEventListener("scroll", () => {
-
-        if (!topBtn) return;
-
-        if (window.scrollY > 300) {
-
-            topBtn.style.display = "flex";
-
-        } else {
-
-            topBtn.style.display = "none";
-
-        }
+        duration:1000,
+        once:true,
+        easing:"ease-in-out"
 
     });
 
-    if (topBtn) {
+    /*=================================
+            LOADER
+    =================================*/
 
-        topBtn.addEventListener("click", () => {
+    const loader=document.getElementById("loader");
 
-            window.scrollTo({
+    window.addEventListener("load",()=>{
 
-                top: 0,
+        setTimeout(()=>{
 
-                behavior: "smooth"
+            loader.style.opacity="0";
 
-            });
+            loader.style.visibility="hidden";
+
+        },1200);
+
+    });
+
+    /*=================================
+            TYPING EFFECT
+    =================================*/
+
+    new Typed("#typing",{
+
+        strings:[
+
+            "Embedded Software Engineer",
+
+            "Firmware Developer",
+
+            "STM32 Developer",
+
+            "ARM Cortex-M Engineer",
+
+            "PIC16F877A Developer",
+
+            "Embedded C Programmer"
+
+        ],
+
+        typeSpeed:70,
+
+        backSpeed:40,
+
+        backDelay:1500,
+
+        loop:true
+
+    });
+
+    /*=================================
+            CURRENT YEAR
+    =================================*/
+
+    document.getElementById("year").textContent=
+
+    new Date().getFullYear();
+
+    /*=================================
+            SCROLL PROGRESS BAR
+    =================================*/
+
+    const progress=document.getElementById("progressBar");
+
+    window.addEventListener("scroll",()=>{
+
+        const total=
+
+        document.documentElement.scrollHeight-
+
+        document.documentElement.clientHeight;
+
+        const progressWidth=
+
+        (window.scrollY/total)*100;
+
+        progress.style.width=
+
+        progressWidth+"%";
+
+    });
+
+    /*=================================
+            BACK TO TOP
+    =================================*/
+
+    const topBtn=document.getElementById("topBtn");
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>400)
+
+            topBtn.style.display="block";
+
+        else
+
+            topBtn.style.display="none";
+
+    });
+
+    topBtn.addEventListener("click",()=>{
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
 
         });
 
-    }
+    });
 
-    /*========================================
-      ACTIVE NAVIGATION
-    ========================================*/
+    /*=================================
+            ACTIVE NAVIGATION
+    =================================*/
 
-    const sections = document.querySelectorAll("section");
+    const sections=document.querySelectorAll("section");
 
-    const navLinks = document.querySelectorAll(".nav-links a");
+    const navLinks=document.querySelectorAll(".nav-links a");
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll",()=>{
 
-        let current = "";
+        let current="";
 
-        sections.forEach(section => {
+        sections.forEach(section=>{
 
-            const top = section.offsetTop - 150;
+            const sectionTop=
 
-            const height = section.offsetHeight;
+            section.offsetTop-180;
 
-            if (window.scrollY >= top &&
-                window.scrollY < top + height) {
+            if(window.scrollY>=sectionTop){
 
-                current = section.id;
+                current=section.id;
 
             }
 
         });
 
-        navLinks.forEach(link => {
+        navLinks.forEach(link=>{
 
             link.classList.remove("active");
 
-            if (link.getAttribute("href") === "#" + current) {
+            if(link.href.includes(current))
 
                 link.classList.add("active");
 
-            }
-
         });
 
     });
-
-    /*========================================
-      SMOOTH SCROLL
-    ========================================*/
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", function (e) {
-
-            const target = document.querySelector(this.getAttribute("href"));
-
-            if (target) {
-
-                e.preventDefault();
-
-                target.scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
-            }
-
-        });
-
-    });
-
-    /*========================================
-      NAVBAR SHADOW
-    ========================================*/
-
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", () => {
-
-        if (!navbar) return;
-
-        if (window.scrollY > 40) {
-
-            navbar.style.boxShadow =
-                "0 8px 25px rgba(0,229,255,.15)";
-
-        } else {
-
-            navbar.style.boxShadow = "none";
-
-        }
-
-    });
-
-    /*========================================
-      SKILL BAR ANIMATION
-    ========================================*/
-
-    const bars = document.querySelectorAll(".progress-bar");
-
-    const skillObserver = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                const bar = entry.target;
-
-                const width = bar.style.width;
-
-                bar.style.width = "0";
-
-                setTimeout(() => {
-
-                    bar.style.transition = "1.5s";
-
-                    bar.style.width = width;
-
-                }, 200);
-
-                skillObserver.unobserve(bar);
-
-            }
-
-        });
-
-    }, {
-
-        threshold: 0.4
-
-    });
-
-    bars.forEach(bar => {
-
-        skillObserver.observe(bar);
-
-    });
-
-    /*========================================
-      HERO PARALLAX
-    ========================================*/
-
-    const heroImg = document.querySelector(".hero-image img");
-
-    document.addEventListener("mousemove", e => {
-
-        if (!heroImg) return;
-
-        const x = (window.innerWidth / 2 - e.clientX) / 45;
-
-        const y = (window.innerHeight / 2 - e.clientY) / 45;
-
-        heroImg.style.transform =
-            `translate(${x}px,${y}px)`;
-
-    });
-
-    /*========================================
-      CARD ANIMATION
-    ========================================*/
-
-    const cards = document.querySelectorAll(
-
-        ".project-card,.protocol-card,.certificate-card,.info-card"
-
-    );
-
-    cards.forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-
-            card.style.transform = "translateY(-10px)";
-
-        });
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.transform = "translateY(0)";
-
-        });
-
-    });
-
-    /*========================================
-      TERMINAL TYPING
-    ========================================*/
-
-    const terminal = document.querySelector(".terminal pre");
-
-    if (terminal) {
-
-        const text = terminal.innerHTML;
-
-        terminal.innerHTML = "";
-
-        let i = 0;
-
-        function typeTerminal() {
-
-            if (i < text.length) {
-
-                terminal.innerHTML += text.charAt(i);
-
-                i++;
-
-                setTimeout(typeTerminal, 12);
-
-            }
-
-        }
-
-        const observer = new IntersectionObserver(entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    typeTerminal();
-
-                    observer.disconnect();
-
-                }
-
-            });
-
-        });
-
-        observer.observe(terminal);
-
-    }
-
-    /*========================================
-      MOBILE MENU
-    ========================================*/
-
-    const menuBtn = document.querySelector(".menu-btn");
-
-    const nav = document.querySelector(".nav-links");
-
-    if (menuBtn && nav) {
-
-        menuBtn.addEventListener("click", () => {
-
-            nav.classList.toggle("show");
-
-        });
-
-    }
 
 });
