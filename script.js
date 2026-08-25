@@ -1,48 +1,75 @@
-/* ==========================================
-   EMBEDDED DASHBOARD PORTFOLIO
-   Author: Sasinathan R
-========================================== */
+/*==================================================
+    EMBEDDED SYSTEM PORTFOLIO
+    Author : Sasinathan R
+==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================
-       AOS INITIALIZATION
-    ========================= */
+    /*========================================
+      AOS
+    ========================================*/
 
     if (typeof AOS !== "undefined") {
+
         AOS.init({
             duration: 1000,
             once: true,
             easing: "ease-in-out"
         });
+
     }
 
-    /* =========================
-       TYPING EFFECT
-    ========================= */
+    /*========================================
+      TYPED JS
+    ========================================*/
 
-    if (document.querySelector("#typing")) {
+    if (document.getElementById("typing")) {
 
         new Typed("#typing", {
+
             strings: [
+
                 "Embedded Software Engineer",
-                "Firmware Developer",
-                "STM32 Developer",
-                "ARM Cortex-M Engineer",
-                "Device Driver Developer",
-                "RTOS Enthusiast"
+
+                "STM32 Firmware Developer",
+
+                "ARM Cortex-M Programmer",
+
+                "Embedded C Developer",
+
+                "RTOS Enthusiast",
+
+                "Device Driver Developer"
+
             ],
 
-            typeSpeed: 65,
-            backSpeed: 40,
-            backDelay: 1500,
+            typeSpeed: 60,
+
+            backSpeed: 35,
+
+            backDelay: 1400,
+
             loop: true
+
         });
+
     }
 
-    /* =========================
-       SCROLL TO TOP BUTTON
-    ========================= */
+    /*========================================
+      FOOTER YEAR
+    ========================================*/
+
+    const year = document.getElementById("year");
+
+    if (year) {
+
+        year.textContent = new Date().getFullYear();
+
+    }
+
+    /*========================================
+      BACK TO TOP BUTTON
+    ========================================*/
 
     const topBtn = document.getElementById("topBtn");
 
@@ -52,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 300) {
 
-            topBtn.style.display = "block";
+            topBtn.style.display = "flex";
 
         } else {
 
@@ -67,35 +94,40 @@ document.addEventListener("DOMContentLoaded", () => {
         topBtn.addEventListener("click", () => {
 
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
 
         });
 
     }
 
-    /* =========================
-       ACTIVE NAVIGATION
-    ========================= */
+    /*========================================
+      ACTIVE NAVIGATION
+    ========================================*/
 
     const sections = document.querySelectorAll("section");
+
     const navLinks = document.querySelectorAll(".nav-links a");
 
     window.addEventListener("scroll", () => {
 
-        let currentSection = "";
+        let current = "";
 
         sections.forEach(section => {
 
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
+            const top = section.offsetTop - 150;
 
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
+            const height = section.offsetHeight;
+
+            if (window.scrollY >= top &&
+                window.scrollY < top + height) {
+
+                current = section.id;
+
             }
 
         });
@@ -104,10 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.classList.remove("active");
 
-            if (
-                link.getAttribute("href") ===
-                `#${currentSection}`
-            ) {
+            if (link.getAttribute("href") === "#" + current) {
 
                 link.classList.add("active");
 
@@ -117,24 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* =========================
-       SMOOTH SCROLLING
-    ========================= */
+    /*========================================
+      SMOOTH SCROLL
+    ========================================*/
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-        anchor.addEventListener("click", function (e) {
+        link.addEventListener("click", function (e) {
 
-            const targetId = this.getAttribute("href");
-            const target = document.querySelector(targetId);
+            const target = document.querySelector(this.getAttribute("href"));
 
             if (target) {
 
                 e.preventDefault();
 
                 target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+
+                    behavior: "smooth"
+
                 });
 
             }
@@ -143,9 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* =========================
-       NAVBAR EFFECT
-    ========================= */
+    /*========================================
+      NAVBAR SHADOW
+    ========================================*/
 
     const navbar = document.querySelector(".navbar");
 
@@ -153,10 +182,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!navbar) return;
 
-        if (window.scrollY > 50) {
+        if (window.scrollY > 40) {
 
             navbar.style.boxShadow =
-                "0 5px 25px rgba(0,229,255,.15)";
+                "0 8px 25px rgba(0,229,255,.15)";
 
         } else {
 
@@ -166,209 +195,158 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* =========================
-       PROTOCOL STATUS ANIMATION
-    ========================= */
+    /*========================================
+      SKILL BAR ANIMATION
+    ========================================*/
 
-    const leds = document.querySelectorAll(".led");
+    const bars = document.querySelectorAll(".progress-bar");
 
-    setInterval(() => {
+    const skillObserver = new IntersectionObserver(entries => {
 
-        leds.forEach(led => {
+        entries.forEach(entry => {
 
-            led.style.opacity =
-                led.style.opacity === "0.4"
-                    ? "1"
-                    : "0.4";
+            if (entry.isIntersecting) {
+
+                const bar = entry.target;
+
+                const width = bar.style.width;
+
+                bar.style.width = "0";
+
+                setTimeout(() => {
+
+                    bar.style.transition = "1.5s";
+
+                    bar.style.width = width;
+
+                }, 200);
+
+                skillObserver.unobserve(bar);
+
+            }
 
         });
 
-    }, 700);
+    }, {
 
-    /* =========================
-       SKILL BAR ANIMATION
-    ========================= */
-
-    const progressBars =
-        document.querySelectorAll(".value");
-
-    const progressObserver =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        const bar = entry.target;
-
-                        const finalWidth =
-                            bar.style.width;
-
-                        bar.style.width = "0";
-
-                        setTimeout(() => {
-
-                            bar.style.transition =
-                                "width 1.5s ease";
-
-                            bar.style.width =
-                                finalWidth;
-
-                        }, 200);
-
-                        progressObserver.unobserve(
-                            bar
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.3
-            }
-
-        );
-
-    progressBars.forEach(bar => {
-
-        progressObserver.observe(bar);
+        threshold: 0.4
 
     });
 
-    /* =========================
-       CARD FADE ANIMATION
-    ========================= */
+    bars.forEach(bar => {
 
-    const cards = document.querySelectorAll(
-        ".protocol-card, .project-card, .about-content"
-    );
-
-    const cardObserver =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.2
-            }
-
-        );
-
-    cards.forEach(card => {
-
-        card.style.opacity = "0";
-        card.style.transform = "translateY(50px)";
-        card.style.transition =
-            "all .8s ease";
-
-        cardObserver.observe(card);
+        skillObserver.observe(bar);
 
     });
 
-    /* =========================
-       TERMINAL TYPEWRITER
-    ========================= */
+    /*========================================
+      HERO PARALLAX
+    ========================================*/
 
-    const terminalSpans =
-        document.querySelectorAll(".terminal span");
-
-    terminalSpans.forEach(span => {
-
-        const text = span.textContent;
-
-        span.textContent = "";
-
-        let i = 0;
-
-        const typing = () => {
-
-            if (i < text.length) {
-
-                span.textContent += text.charAt(i);
-
-                i++;
-
-                setTimeout(typing, 25);
-
-            }
-
-        };
-
-        const observer =
-            new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        typing();
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            });
-
-        observer.observe(span);
-
-    });
-
-    /* =========================
-       HERO IMAGE PARALLAX
-    ========================= */
-
-    const heroImage =
-        document.querySelector(".hero-image img");
+    const heroImg = document.querySelector(".hero-image img");
 
     document.addEventListener("mousemove", e => {
 
-        if (!heroImage) return;
+        if (!heroImg) return;
 
-        const x =
-            (window.innerWidth / 2 - e.clientX) / 40;
+        const x = (window.innerWidth / 2 - e.clientX) / 45;
 
-        const y =
-            (window.innerHeight / 2 - e.clientY) / 40;
+        const y = (window.innerHeight / 2 - e.clientY) / 45;
 
-        heroImage.style.transform =
-            `translate(${x}px, ${y}px)`;
+        heroImg.style.transform =
+            `translate(${x}px,${y}px)`;
 
     });
 
-    /* =========================
-       FOOTER YEAR
-    ========================= */
+    /*========================================
+      CARD ANIMATION
+    ========================================*/
 
-    const footerText =
-        document.querySelector("footer p");
+    const cards = document.querySelectorAll(
 
-    if (footerText) {
+        ".project-card,.protocol-card,.certificate-card,.info-card"
 
-        footerText.innerHTML =
-            `© ${new Date().getFullYear()} Sasinathan R | Embedded Software Engineer`;
+    );
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-10px)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "translateY(0)";
+
+        });
+
+    });
+
+    /*========================================
+      TERMINAL TYPING
+    ========================================*/
+
+    const terminal = document.querySelector(".terminal pre");
+
+    if (terminal) {
+
+        const text = terminal.innerHTML;
+
+        terminal.innerHTML = "";
+
+        let i = 0;
+
+        function typeTerminal() {
+
+            if (i < text.length) {
+
+                terminal.innerHTML += text.charAt(i);
+
+                i++;
+
+                setTimeout(typeTerminal, 12);
+
+            }
+
+        }
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    typeTerminal();
+
+                    observer.disconnect();
+
+                }
+
+            });
+
+        });
+
+        observer.observe(terminal);
+
+    }
+
+    /*========================================
+      MOBILE MENU
+    ========================================*/
+
+    const menuBtn = document.querySelector(".menu-btn");
+
+    const nav = document.querySelector(".nav-links");
+
+    if (menuBtn && nav) {
+
+        menuBtn.addEventListener("click", () => {
+
+            nav.classList.toggle("show");
+
+        });
 
     }
 
