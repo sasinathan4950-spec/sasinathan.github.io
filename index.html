@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sasinathan R | Embedded Software Engineer</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,59 +17,87 @@
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <div class="grid-bg"></div>
+
     <nav class="navbar">
 
-        <div class="logo">Sasinathan R</div>
+        <div class="logo">
+            EMBEDDED.SYSTEM
+        </div>
 
-        <ul class="nav-links">
-            <li>#homeHome</a></li>
-            <li>#aboutAbout</a></li>
-            <li>#skillsSkills</a></li>
-            <li><projectsProjects</a></li>
-            <li>#educationEducation</a></li>
-            <li><contactContact</a></li>
-        </ul>
+        <ul>
+            <li><a href="#about">li>
+            <li><a href="#skills">SKi>
+            <li><a href="#projects">></li>
+            <li><a href="#contact">CONTACT</a    </ul>
 
     </nav>
 
-    <section id="home" class="hero">
+    <section class="hero">
 
-        <div class="hero-content">
+        <div class="hero-left">
 
-            <h1>Hi, I'm <span>Sasinathan R</span></h1>
+            <div class="status-box">
+                SYSTEM STATUS : ONLINE
+            </div>
+
+            <h1>
+                SASINATHAN R
+            </h1>
 
             <h2 id="typing"></h2>
 
             <p>
-                Passionate Embedded Software Engineer focused on
-                Embedded C, STM32, ARM Cortex-M, AVR,
-                Firmware Development and Device Drivers.
+                Embedded Software Engineer focused on
+                Firmware Development, Embedded C,
+                STM32, ARM Cortex-M and Device Drivers.
             </p>
 
-            <div class="hero-buttons">
+            <div class="buttons">
 
                 #projects
                     View Projects
                 </a>
 
-                <a href="assets/resume.pdf"
-                    class="btn btn-outline"
-                    v>
+                assets/resume.pdf
+                    Resume
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="hero-image">
+        <div class="hero-right">
 
-            <img src="assets/profile.jpg"
-                alt="Sasinathan Profile">
+            <div class="dashboard-card">
+
+                <h3>Development Status</h3>
+
+                <div class="skill-meter">
+                    <span>Embedded C</span>
+                    <div class="bar"><div style="width:95%"></div></div>
+                </div>
+
+                <div class="skill-meter">
+                    <span>STM32</span>
+                    <div class="bar"><div style="width:90%"></div></div>
+                </div>
+
+                <div class="skill-meter">
+                    <span>UART / SPI / I2C</span>
+                    <div class="bar"><div style="width:92%"></div></div>
+                </div>
+
+                <div class="skill-meter">
+                    <span>ARM Cortex-M</span>
+                    <div class="bar"><div style="width:88%"></div></div>
+                </div>
+
+            </div>
 
         </div>
 
@@ -74,34 +105,41 @@
 
     <section id="about">
 
-        <h2ass="about-container">
+        <h2>ABOUT</h2>
+
+        <div class="card">
+
             <p>
-                I am an aspiring Embedded Software Engineer passionate about
-                firmware development, Embedded C programming,
-                microcontrollers, RTOS and communication protocols.
+                Passionate Embedded Software Engineer interested in
+                low level programming, RTOS, communication protocols,
+                firmware architecture and microcontroller development.
+
+                Strong focus on writing efficient, optimized and reliable
+                code for resource constrained systems.
             </p>
+
         </div>
 
     </section>
 
     <section id="skills">
 
-        <h2 class="section-title">Skills</h2>
+        <h2>SKILLS</h2>
 
-        <div class="skills-grid">
+        <div class="skills">
 
-            <div class="skill-card">Embedded C</div>
-            <div class="skill-card">STM32</div>
-            <div class="skill-card">ARM Cortex-M</div>
-            <div class="skill-card">AVR</div>
-            <div class="skill-card">UART</div>
-            <div class="skill-card">SPI</div>
-            <div class="skill-card">I2C</div>
-            <div class="skill-card">GPIO</div>
-            <div class="skill-card">ADC</div>
-            <div class="skill-card">PWM</div>
-            <div class="skill-card">Interrupts</div>
-            <div class="skill-card">Git & GitHub</div>
+            <div class="chip">Embedded C</div>
+            <div class="chip">STM32</div>
+            <div class="chip">ARM Cortex-M</div>
+            <div class="chip">UART</div>
+            <div class="chip">SPI</div>
+            <div class="chip">I2C</div>
+            <div class="chip">GPIO</div>
+            <div class="chip">PWM</div>
+            <div class="chip">ADC</div>
+            <div class="chip">Interrupts</div>
+            <div class="chip">Git</div>
+            <div class="chip">GitHub</div>
 
         </div>
 
@@ -109,83 +147,63 @@
 
     <section id="projects">
 
-        <h2 class="section-title">Projects</h2>
+        <h2>PROJECTS</h2>
 
-        <div class="project-grid">
+        <div class="projects">
 
-            <div class="project-card">
+            <div class="project">
                 <h3>Temperature Based Fan Controller</h3>
-                <p>Automatic control of fan speed using temperature sensing and PWM.</p>
+                <p>ADC and PWM based automatic fan control system.</p>
             </div>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>UART Driver</h3>
-                <p>Interrupt-driven UART driver developed in Embedded C.</p>
+                <p>Interrupt-driven UART driver implemented in Embedded C.</p>
             </div>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>SPI Driver</h3>
-                <p>Full duplex SPI communication implementation.</p>
+                <p>Full duplex SPI communication driver.</p>
             </div>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>GPIO Register Programming</h3>
-                <p>Register-level peripheral programming using STM32.</p>
+                <p>STM32 peripheral register level programming.</p>
             </div>
 
-        </div>
-
-    </section>
-
-    <section id="education">
-
-        <h2 class="section-title">Education</h2>
-
-        <div class="education-card">
-            <h3>B.E. Electronics and Communication Engineering</h3>
-            <p>Graduation Year: 2027</p>
         </div>
 
     </section>
 
     <section id="contact">
 
-        <h2 class="section-title">Contact Me</h2>
+        <h2>CONTACT</h2>
 
-        <div class="contact-container">
+        <div class="card center">
 
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <a href="mailto:sasinathan4950@gmail.com">
-                    sasinathan4950@gmail.com
+            <p>
+                Email : sasinathan4950@gmail.com
+            </p>
+
+            <p>
+                GitHub :
+                <a href="https://github.com/sasinathan4950-spec"
+                    target="_blank">
+                    github.com/sasinathan4950-spec
                 </a>
-            </div>
-
-            <div class="contact-card">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <a href="https://github.com/sasinathan4950-spec" target="_blank">
-                    GitHub Profile
-                </a>
-            </div>
+            </p>
 
         </div>
 
     </section>
 
     <footer>
-        <p>© 2026 Sasinathan R | Embedded Software Engineer</p>
+        © 2026 Sasinathan R | Embedded Software Engineer
     </footer>
 
-    <button id="topBtn">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
     <script src="script.js"></script>
 
 </body>
+
 </html>
